@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="main">
+        <form onsubmit="submit_()" action="login.html">
+            <div>
+                <label for="fname">First Name: </label><input id="fname" type="text" required>
+            </div>
+            <div>
+                <label for="lname">Last Name: </label><input id="lname" type="text" required>
+            </div>
+            <div>
+                <label for="email">Email: </label><input id="email" type="email" required value="">
+            </div>
+            <div>
+                <img id="passShow2" onclick="privacy1()" src="hide.png" alt="">
+                <img id="passShow" onclick="privacy1()" src="show.png" alt="">
+                <label for="password">Password: </label><input oninput="check()" id="password" type="password" required>
+            </div>
+            <div>
+                <img id="passShow4" onclick="privacy2()" src="hide.png" alt="">
+                <img id="passShow3" onclick="privacy2()" src="show.png" alt="">
+                <label for="cpassword">Confirm Password: </label><input oninput="check()" onfocus="check()" id="cpassword" type="password" required>
+            </div>
+            <div>
+                <input id="req" type="checkbox" required><label for="req">I have read and accepted the <a href="#">terms and conditions</a></label>
+            </div>
+            <div>
+                <button type="reset">Reset</button>
+                <button id="submit" type="Submit" onclick="doS()">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+<script src="index.js"></script>
