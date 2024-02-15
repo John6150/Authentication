@@ -10,7 +10,7 @@
 
 <body>
     <div class="main">
-        <form onsubmit="submit_()" action="login.html">
+        <form onsubmit="submit_(event)" action="login.html">
             <div>
                 <label for="fname">First Name: </label><input id="fname" type="text" required>
             </div>
@@ -28,14 +28,16 @@
             <div>
                 <img id="passShow4" onclick="privacy2()" src="hide.png" alt="">
                 <img id="passShow3" onclick="privacy2()" src="show.png" alt="">
-                <label for="cpassword">Confirm Password: </label><input oninput="check()" onfocus="check()" id="cpassword" type="password" required>
+                <label for="cpassword">Confirm Password: </label><input oninput="check()" onfocus="check()"
+                    id="cpassword" type="password" required>
             </div>
             <div>
-                <input id="req" type="checkbox" required><label for="req">I have read and accepted the <a href="#">terms and conditions</a></label>
+                <input id="req" type="checkbox" required><label for="req">I have read and accepted the <a href="#">terms
+                        and conditions</a></label>
             </div>
             <div>
                 <button type="reset">Reset</button>
-                <button id="submit" type="Submit" onclick="doS()">Submit</button>
+                <button id="submit" onclick="doS()" type="Submit">Submit</button>
             </div>
         </form>
     </div>

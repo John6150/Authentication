@@ -14,29 +14,33 @@ let email = document.getElementById("email")
 let ar = JSON.parse(localStorage.getItem("Data")) || []
 let pas = ''
 
-function submit_(){
-    ar.push({FirstName: fname.value, SecondName: lname.value, Email: email.value, Password: pass.value})
-    localStorage.setItem("Data", JSON.stringify(ar))
+function submit_(ev) {
+    ev.preventDefault()
 }
 
-function check(){
+function check() {
     pas = pass2.value
     if (pas == pass.value && pass.value == pass2.value) {
-        // console.log(ar);
         document.getElementById("req").disabled = false
         document.getElementById("req").checked = false
-        // document.getElementById("submit").disabled = true
 
-    }else{
+    } else {
         document.getElementById("req").disabled = true
     }
 }
 
 function doS() {
-    if (pass.value == pass2.value) {
-
+    if (fname.value == "" || lname.value == "" || email.value == "" || pass.value == "" || req.checked == false) {
+        alert("Please complete the form");
+        return;
+    }else
+    if (pass.value != pass2.value) {
+        alert("Sorry, passwords do not martch")
+        return;
     } else {
-        alert("Sorry, passwords do not match");
+        ar.push({ FirstName: fname.value, SecondName: lname.value, Email: email.value, Password: pass.value })
+        localStorage.setItem("Data", JSON.stringify(ar))
+        window.location.href = "login.html"
     }
 }
 function privacy1() {

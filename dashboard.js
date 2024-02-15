@@ -1,9 +1,11 @@
-let ar = JSON.parse(localStorage.getItem("User")) || []
+let ar = JSON.parse(localStorage.getItem("User"));
+console.log(ar);
 
 
-if (ar[0].FirstName == null || ar[0].FirstName == undefined) {
+if (ar == null || ar.FirstName == null || ar.FirstName == undefined) {
+    console.log("hey");
 
-} else {
-    document.getElementById("title").innerHTML = `Welcome ${ar[0].FirstName} ${ar[0].SecondName}`
-
+    window.location.href = "login.html"
+} else{
+    document.getElementById("title").innerHTML = `Welcome ${ar.FirstName} ${ar.SecondName}`
 }
